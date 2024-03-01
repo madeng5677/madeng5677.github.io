@@ -124,10 +124,12 @@
             const { year, month, day, hours, minutes, seconds } = getCurrentDate()
             const currentTime = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
 
+            let time = window.prompt('目标时间：', currentTime) || targetTime;
             // 更新目标时间和时间戳
-            targetTimeEl.innerText = currentTime;
-            targetTimeStamp = new Date(currentTime).getTime();
-            localStorage.setItem('target-time', currentTime);
+            targetTime = time;
+            targetTimeEl.innerText = time;
+            targetTimeStamp = new Date(time).getTime();
+            localStorage.setItem('target-time', time);
         }
     </script>
 
